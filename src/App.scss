@@ -1,0 +1,42 @@
+.App{
+    min-height: 100%;
+    margin: 5vh 3%;
+    padding: 3%;
+    border: 5px solid white;
+    border-radius: 50px;
+    background-color: #ffebc1;
+    z-index: -1;
+  
+    &__background_banner{
+      position: fixed;
+      top: 18%;
+      left: 5%;
+      height: 30vh;
+      width: 90%;
+      border-radius: 35px;
+      background: rgb(253,188,11);
+      background: -moz-radial-gradient(circle at 50% 0%, rgba(253,188,11,1) 15%, rgba(253,192,28,1) 15%, rgba(253,192,28,1) 30%, rgba(253,188,11,1) 30%, rgba(253,188,11,1) 55%, rgba(253,192,28,1) 55%, rgba(253,193,14,1) 70%);
+      background: -webkit-radial-gradient(circle at 50% 0%, rgba(253,188,11,1) 15%, rgba(253,192,28,1) 15%, rgba(253,192,28,1) 30%, rgba(253,188,11,1) 30%, rgba(253,188,11,1) 55%, rgba(253,192,28,1) 55%, rgba(253,193,14,1) 70%);
+      background: radial-gradient(circle at 50% 0%, rgba(253,188,11,1) 15%, rgba(253,192,28,1) 15%, rgba(253,192,28,1) 30%, rgba(253,188,11,1) 30%, rgba(253,188,11,1) 55%, rgba(253,192,28,1) 55%, rgba(253,193,14,1) 70%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdbc0b",endColorstr="#fdc10e",GradientType=1);
+    }
+  
+    @media screen and (max-width: 600px) {
+      &__background_banner{
+        height: 70vh;
+        left: 7.5%;
+        width: 85%;
+      }
+    }
+  
+    &__body{
+      height: 100vh;
+    }
+  
+    &__cardsContainer{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+}

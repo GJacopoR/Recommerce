@@ -1,0 +1,13 @@
+import Card from "../../Components/Card/component";
+import classes from "./default.module.scss";
+
+export default function Home() {
+    return <section className={classes.CardsContainer}>
+    <Card name={'Title'} category={'Category'} image={'https://picsum.photos/1080/1900?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} price={42.99}/>
+    <Card name={'Another itle'} category={'Category'} image={'https://picsum.photos/1700/900?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} price={2.99}/>
+    <Card name={'Another one'} category={'Category'} image={'https://picsum.photos/700/1200?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} price={4.99}/>
+    <Card name={'Another again'} category={'Category'} image={'https://picsum.photos/1200/720?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} price={122.99}/>
+    <Card name={'And Again'} category={'Category'} image={'https://picsum.photos/640/800?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} price={12.99}/>
+    <Card name={'Last one'} category={'Category'} image={'https://picsum.photos/1300/1300?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} price={50.99}/>
+</section>
+}

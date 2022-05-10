@@ -1,0 +1,16 @@
+.background_container{
+    min-width: 70%;
+    height: 100px;
+    position: absolute;
+    top: 18%;
+    left: 15%;
+    z-index: 0;
+    border-radius: 10px;
+    background: #ffda02;
+    background: -moz-radial-gradient(circle at 55% 55%, #ffda02 44%, #ffffff 46%, #ff8800 48%);
+    background: -webkit-radial-gradient(circle at 55% 55%, #ffda02 44%, #ffffff 46%, #ff8800 48%);
+    background: radial-gradient(circle at 55% 55%, #ffda02 44%, #ffffff 46%, #ff8800 48%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffda02",endColorstr="#ff8800",GradientType=1);
+    -webkit-box-shadow: 0px -15px 30px 5px #ffc8a280; 
+    box-shadow: 0px -15px 30px 5px #ffc8a280;
+}

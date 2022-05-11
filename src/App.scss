@@ -29,6 +29,15 @@
         width: 85%;
       }
     }
+
+    @media screen and (max-width: 375px) {
+      &__background_banner{
+        height: 80vh;
+        top: 11%;
+        left: 7.5%;
+        width: 85%;
+      }
+    }
   
     &__body{
       height: 100vh;

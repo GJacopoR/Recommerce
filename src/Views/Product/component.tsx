@@ -34,7 +34,14 @@ export default function Product(props:ProductProps){
                 <p className={classes.Product__descriptionContainer__description}>{product.description}</p>
             </div>
             <div className={classes.Product__priceContainer}>
-                <h3>{product.pricing.price}</h3>
+                {product.pricing.discount 
+                    ? <div className={classes.Product__priceContainer__discountContainer}>
+                        <h4 className={classes.Product__priceContainer__discountContainer__discountedPrice}>{product.pricing.price}</h4>
+                        <h6 className={classes.Product__priceContainer__discountContainer__discount}>-{product.pricing.discount}</h6>
+                        <h3 className={classes.Product__priceContainer__discountContainer__price}>{Number(product.pricing.price) - Number(product.pricing.discount)}</h3>
+                    </div>
+                    : <h3 className={classes.Product__priceContainer__fullPrice}>{product.pricing.price}</h3>
+                }
                 <button className={classes.Product__priceContainer__button}>Add to Cart!</button>
             </div> 
 

@@ -13,6 +13,10 @@
     // -webkit-box-shadow: 0px 5px 15px 5px #0000004d; 
     // box-shadow: 0px 5px 15px 5px #0000004d;
 
+    .clickArea{
+        text-decoration: none;
+    }
+
     .toolbar{
         height: 20%;
         display: flex;
@@ -58,7 +62,8 @@
         display: flex;
         flex-wrap: wrap;
         align-items: flex-end;
-
+        color: black;
+        
         &__title{
             width: 100%;
             text-align: center;
@@ -72,8 +77,6 @@
             font-size: large;
             font-weight: 500;
         }
-
-
 
         // &__description{
         //     height: 100px;

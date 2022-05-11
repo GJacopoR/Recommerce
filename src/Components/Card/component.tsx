@@ -8,11 +8,7 @@ export default function Card(props:APIobj){
 
     const URLtitle:string = props.title.toLowerCase().split(" ").join("-")
 
-    return <Link to={`/${URLtitle}`}>
-        <section className={classes.Card}>
-            <div className={classes.background}>
-                <CardBackground />
-            </div>
+    return <section className={classes.Card}>
             <div className={classes.toolbar}>
                 <div className={classes.toolbar__searchSimilar}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -26,6 +22,10 @@ export default function Card(props:APIobj){
                 </div>
                 {/* <div className={classes.toolbar__addToChart}><FontAwesomeIcon icon='cart-plus' color={'black'} size={'lg'} /></div> */}
             </div>
+        <Link to={`/${URLtitle}`} className={classes.clickArea}>
+            <div className={classes.background}>
+                <CardBackground />
+            </div>
             <picture className={classes.img_container}>
                 <img src={props.imageURL} alt={props.title + "_picture"} className={classes.img_container__img} />
             </picture>
@@ -37,6 +37,6 @@ export default function Card(props:APIobj){
                     {props.pricing.price}
                 </main>
             </div>
-        </section>
-    </Link>
+        </Link>
+    </section>
 }

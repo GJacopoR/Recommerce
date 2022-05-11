@@ -1,5 +1,47 @@
-.CardsContainer{
+.Home{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+    &__toolbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 5vh;
+        margin-top: 6%;
+        
+        &__titleContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 50%;
+            margin: 3% 0;
+            font-size: xx-large;
+            color: #222;
+            z-index: 10;
+        }
+
+        &__tagsContainer{
+            display: flex;
+            width: 25%;
+            color: white;
+            z-index: 10;
+        }
+
+        &__searchContainer{
+            display: flex;
+            justify-content: flex-end;
+            width: 25%;
+            color: white;
+            z-index: 10;
+        }
+    }
+
+    &__cardsContainer{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }

@@ -4,9 +4,9 @@ import classes from "./default.module.scss";
 export default function Navbar() {
     return <nav className={classes.Navbar}>
         <section className={classes.Navbar__logo}>
-            <h1 className={classes.Navbar__logo__pageName}>
+            <h2 className={classes.Navbar__logo__pageName}>
                 JCommerce
-            </h1>
+            </h2>
         </section>
         <section className={classes.Navbar__cart}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">

@@ -93,21 +93,41 @@ const API:APIobj[] = [
     },
 ]
 
+// interface CartRepo{
+//     {
+
+//     }
+// }
+
 function App() {
 
     const [cart, setCart] = useState<APIobj[]>([])
 
+    const handleRemove = (id:string) => {
+        let erasedProduct!:APIobj;
+
+        cart.forEach( el => {
+            if(el.id == id){
+                erasedProduct = el
+            }
+        })
+
+        setCart(cart.splice(cart.indexOf(erasedProduct),1))
+    }
+
+    console.log(cart)
+
     return (
         <Router>
         <main className="App">
-            <Navbar/>
+            <Navbar cart={cart}/>
             <section className="App__background_banner">
             </section>
             <section className="App__body">
             <Routes>
                 <Route path="/" element={<Home API={API} setCart={setCart}/> }/>
                 <Route path="/:product" element={ <Product API={API} /> }/>
-                <Route path="/cart" element={ <Cart cart={cart} setCart={setCart}/> }/>
+                <Route path="/cart" element={ <Cart cart={cart} setCart={setCart} handleRemove={handleRemove}/> }/>
             </Routes>
             </section>
         </main>

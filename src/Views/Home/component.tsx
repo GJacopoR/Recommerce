@@ -21,16 +21,8 @@ export default function Home(props:HomeProps) {
             </span>
         </div>
         <div className={classes.Home__cardsContainer}>
-            {props.API.map((el) => {
-                return <Card key={el.id}
-                    title={el.title}
-                    categoriesIDs={el.categoriesIDs} 
-                    imageURL={el.imageURL}
-                    popularity={el.popularity}
-                    description={el.description}
-                    id={el.id} pricing={el.pricing}
-                    brand={el.brand}
-                    rating={el.rating}/>
+            {props.API.map((el, i) => {
+                return <Card key={el.id} setCart={props.setCart} API={props.API[i]}/>
             })}
         </div>
     </section>

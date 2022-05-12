@@ -16,9 +16,15 @@
     &__logo{
         font-size: 1.1em;
 
-        &__pageName{
-            margin: 0;
+        &__link{
+            text-decoration: none;
+            color: #222;
+
+            &__pageName{
+                margin: 0;
+            }
         }
+
     }
 
     &__cart {

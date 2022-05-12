@@ -3,10 +3,20 @@ import "./default.module.scss";
 import CardBackground from "./CardBackground/component";
 import { Link } from "react-router-dom";
 import { APIobj } from "../../Views/Home/model";
+import { useAppDispatch } from "../../app/Redux/hooks";
+import addToCartSlice from "../../app/Redux/Slices/addToCart.slice";
+import { cart } from "../../app/Redux/Slices/addToCart.slice";
 
-export default function Card(props:APIobj){
+interface CardProps{
+    API:APIobj;
+    setCart:Function
+}
 
-    const URLtitle:string = props.title.toLowerCase().split(" ").join("-")
+export default function Card(props:CardProps){
+
+    const URLtitle:string = props.API.title.toLowerCase().split(" ").join("-")
+
+    const dispatch = useAppDispatch();  
 
     return <section className={classes.Card}>
             <div className={classes.toolbar}>
@@ -27,16 +37,18 @@ export default function Card(props:APIobj){
                 <CardBackground />
             </div>
             <picture className={classes.img_container}>
-                <img src={props.imageURL} alt={props.title + "_picture"} className={classes.img_container__img} />
+                <img src={props.API.imageURL} alt={props.API.title + "_picture"} className={classes.img_container__img} />
             </picture>
             <div className={classes.text_container}>
                 <header className={classes.text_container__title}>
-                    {props.title}
+                    {props.API.title}
                 </header>
                 <main className={classes.text_container__price}>
-                    {props.pricing.price}
+                    {props.API.pricing.price}
                 </main>
             </div>
         </Link>
     </section>
 }
+
+// onClick= {()=> dispatch(addToCartSlice(cart, props))}

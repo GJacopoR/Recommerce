@@ -23,9 +23,28 @@
 
     &__cart {
         width: 30px;
+        position: relative;
 
         & svg{
             transform: rotateY(180deg);
+        }
+
+        &__cartFullness{
+            height: 15px;
+            width: 15px;
+            background-color: red;
+            position: absolute;
+            top: -10px;
+            border-radius: 10px;
+            font-size: medium;
+            
+            &__number{
+                position: absolute;
+                top: -25px;
+                left: 4.5px;
+                text-align: center;
+                color: white;
+            }
         }
     }
 }

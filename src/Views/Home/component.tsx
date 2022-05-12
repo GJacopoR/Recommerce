@@ -3,7 +3,8 @@ import classes from "./default.module.scss";
 import { APIobj } from "./model";
 
 interface HomeProps{
-    API:APIobj[]
+    API:APIobj[];
+    setCart:Function
 }
 
 export default function Home(props:HomeProps) {

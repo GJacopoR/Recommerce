@@ -38,7 +38,7 @@ export default function Product(props:ProductProps){
                     ? <div className={classes.Product__priceContainer__discountContainer}>
                         <h4 className={classes.Product__priceContainer__discountContainer__discountedPrice}>{product.pricing.price}</h4>
                         <h6 className={classes.Product__priceContainer__discountContainer__discount}>-{product.pricing.discount}</h6>
-                        <h3 className={classes.Product__priceContainer__discountContainer__price}>{Number(product.pricing.price) - Number(product.pricing.discount)}</h3>
+                        <h3 className={classes.Product__priceContainer__discountContainer__price}>{(Number(product.pricing.price) - Number(product.pricing.discount)).toFixed(2)}</h3>
                     </div>
                     : <h3 className={classes.Product__priceContainer__fullPrice}>{product.pricing.price}</h3>
                 }

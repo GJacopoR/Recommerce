@@ -8,7 +8,8 @@
     z-index: -2;
   
     &__background_banner{
-      position: fixed;
+      // position: fixed;
+      position: absolute;
       top: 18%;
       left: 5%;
       height: 30vh;

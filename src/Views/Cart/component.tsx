@@ -1,4 +1,4 @@
-import { APIobj } from "../Home/model";
+import { APIobj, objAmount } from "../Home/model";
 import classes from "./default.module.scss"
 
 interface CartProps{
@@ -8,6 +8,9 @@ interface CartProps{
 }
 
 export default function Cart(props:CartProps){
+
+    const cart:objAmount[] = []
+
     return <section className={classes.Cart}>
         <h3 className={classes.Cart__title}> I tuoi prodotti :</h3>
         <ul className={classes.Cart__list}>

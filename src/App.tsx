@@ -112,7 +112,7 @@ function App() {
             }
         })
 
-        setCart(cart.splice(cart.indexOf(erasedProduct),1))
+        setCart(cart.splice(cart.indexOf(erasedProduct)+1,1))
     }
 
     console.log(cart)

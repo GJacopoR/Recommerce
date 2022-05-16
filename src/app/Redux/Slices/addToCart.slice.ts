@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { APIobj } from '../../../Views/Home/model';
+import { objAmount } from '../../../Views/Home/model';
 
-const initialState:APIobj[] = []
+const initialState:objAmount[] = []
 
 const addToChartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        save:(state:APIobj[],action:PayloadAction<APIobj>)=>{
+        save:(state:objAmount[],action:PayloadAction<objAmount>)=>{
             state.push(action.payload)
         }
     },

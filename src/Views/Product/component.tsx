@@ -1,16 +1,16 @@
 import classes from "./default.module.scss";
 import { useParams } from "react-router-dom";
-import { APIobj } from "../Home/model";
+import { objAmount } from "../Home/model";
 
 interface ProductProps{
-    API:APIobj[]
+    API:objAmount[]
 }
 
 export default function Product(props:ProductProps){
 
     const productURI = useParams()
 
-    const product:APIobj = props.API.filter((el) => {return (el.title.toLowerCase().split(" ").join("-") === productURI.product)})[0]
+    const product:objAmount = props.API.filter((el) => {return (el.title.toLowerCase().split(" ").join("-") === productURI.product)})[0]
 
     return (product 
         ? <section className={classes.Product}>

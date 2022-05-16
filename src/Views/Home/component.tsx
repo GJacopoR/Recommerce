@@ -1,10 +1,10 @@
 import Card from "../../Components/Card/component";
 import classes from "./default.module.scss";
-import { APIobj } from "./model";
+import { objAmount } from "./model";
 
 interface HomeProps{
-    API:APIobj[];
-    setCart:Function
+    API:objAmount[];
+    handleAddToCart:Function
 }
 
 export default function Home(props:HomeProps) {
@@ -22,15 +22,8 @@ export default function Home(props:HomeProps) {
         </div>
         <div className={classes.Home__cardsContainer}>
             {props.API.map((el, i) => {
-                return <Card key={el.id} setCart={props.setCart} API={props.API[i]}/>
+                return <Card key={el.id} handleAddToCart={props.handleAddToCart} API={props.API[i]}/>
             })}
         </div>
     </section>
 }
-
-{/* <Card title={'Title'} categoriesIDs={["hi-Tech"]} image={'https://picsum.photos/1080/1900?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} pricing={42.99} brand={""} rating={[]}/>
-<Card title={'Another title'} categoriesIDs={["hi-Tech"]} image={'https://picsum.photos/1700/900?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} pricing={2.99} brand={""} rating={[]}/>
-<Card title={'Another one'} categoriesIDs={["hi-Tech"]} image={'https://picsum.photos/700/1200?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} pricing={4.99} brand={""} rating={[]}/>
-<Card title={'Another again'} categoriesIDs={["hi-Tech"]} image={'https://picsum.photos/1200/720?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} pricing={122.99} brand={""} rating={[]}/>
-<Card title={'And Again'} categoriesIDs={["hi-Tech"]} image={'https://picsum.photos/640/800?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} pricing={12.99} brand={""} rating={[]}/>
-<Card title={'Last one'} categoriesIDs={["hi-Tech"]} image={'https://picsum.photos/1300/1300?random=1'} popularity={0} description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nostrum neque illum fugiat accusantium beatae vel alias repellendus? Aspernatur illum aperiam beatae ab, porro delectus culpa temporibus. Iure, eum sapiente!'} id={''} pricing={50.99} brand={""} rating={[]}/> */}

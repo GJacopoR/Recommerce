@@ -4,10 +4,10 @@ import './App.scss';
 import Navbar from './Components/Navbar/component';
 import Cart from './Views/Cart/component';
 import Home from './Views/Home/component';
-import { APIobj } from './Views/Home/model';
+import { objAmount } from './Views/Home/model';
 import Product from './Views/Product/component';
 
-const API:APIobj[] = [
+const API:objAmount[] = [
 	{
 		id: "samsung_GS20U",
 		title: "Samsung Galaxy S20 Ultra",
@@ -20,7 +20,8 @@ const API:APIobj[] = [
 		},
 		imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0ftLXIJmkSDojdUmhmQGkc56yS2aO33P8hA&usqp=CAU",
         popularity: 4,
-        rating: [4, 4, 5]
+        rating: [4, 4, 5],
+        amount: 0
 	},
 	{
 		id: "iphone_13PM",
@@ -34,7 +35,8 @@ const API:APIobj[] = [
 		},
 		imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0l_R2V1zog0BWQD1v4hUZrKqhIhAwmH1xYQ&usqp=CAU",
         popularity: 5,
-        rating: [3, 5, 3]
+        rating: [3, 5, 3],
+        amount: 0
 	},
 	{
 		id: "moto_GPro",
@@ -48,7 +50,8 @@ const API:APIobj[] = [
 		},
 		imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpgCIcb2JhSIKH3vakEgUaXAg3icfcTgP_zA&usqp=CAU",
         popularity: 3,
-        rating: [2, 4, 3]
+        rating: [2, 4, 3],
+        amount: 0
 	},
 	{
 		id: "usbc_headphones",
@@ -61,7 +64,8 @@ const API:APIobj[] = [
 		},
 		imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwbTUaYClLCZq2PMJCwJWeNbS99QovRs4-pA&usqp=CAU",
         popularity: 3,
-        rating: [4, 4, 3]
+        rating: [4, 4, 3],
+        amount: 0
 	},
 	{
 		id: "iphone_cover_prem",
@@ -74,7 +78,8 @@ const API:APIobj[] = [
 		},
 		imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcWShr1GESazgqK40OiRrsuAIcNkFcZkMudOWJg4vs5DiQfIAo0MgN0-hfISnmpXL-ajg&usqp=CAU",
         popularity: 4,
-        rating: [3, 1, 5]
+        rating: [3, 1, 5],
+        amount: 0
 	},
     {
         id: "Xiaomi_12",
@@ -88,26 +93,21 @@ const API:APIobj[] = [
 		},
 		imageURL: "https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1646735920.09252692.png",
         popularity: 3,
-        rating: [3, 4, 5]
+        rating: [3, 4, 5],
+        amount: 0
         
     },
 ]
 
-// interface CartRepo{
-//     {
-
-//     }
-// }
-
 function App() {
 
-    const [cart, setCart] = useState<APIobj[]>([])
+    const [cart, setCart] = useState<objAmount[]>([])
 
     const handleRemove = (id:string) => {
-        let erasedProduct!:APIobj;
+        let erasedProduct!:objAmount;
 
         cart.forEach( el => {
-            if(el.id == id){
+            if(el.id === id){
                 erasedProduct = el
             }
         })
@@ -115,7 +115,28 @@ function App() {
         setCart(cart.splice(cart.indexOf(erasedProduct)+1,1))
     }
 
-    console.log(cart)
+    const handleAddToCart = (item:objAmount) => {
+        setCart((prevState: objAmount[]) => {
+            let newState = [...prevState]
+            const isThere:boolean = newState.some(el => el.id === item.id)
+            if(isThere){
+                for (let i = 0; i < newState.length; i++) {
+                    if(newState[i].id === item.id){
+                        console.log(newState[i].amount)
+                        newState[i].amount++
+                    }
+                }
+            } else {
+                newState.push(item)
+                for (let i = 0; i < newState.length; i++) {
+                    if(newState[i].id === item.id){
+                        newState[i].amount = 1
+                    }
+                }
+            }
+            return newState
+        })
+    }
 
     return (
         <Router>
@@ -125,7 +146,7 @@ function App() {
             </section>
             <section className="App__body">
             <Routes>
-                <Route path="/" element={<Home API={API} setCart={setCart}/> }/>
+                <Route path="/" element={<Home API={API} handleAddToCart={handleAddToCart}/> }/>
                 <Route path="/:product" element={ <Product API={API} /> }/>
                 <Route path="/cart" element={ <Cart cart={cart} setCart={setCart} handleRemove={handleRemove}/> }/>
             </Routes>

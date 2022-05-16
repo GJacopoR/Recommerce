@@ -2,7 +2,7 @@ import { APIobj, objAmount } from "../Home/model";
 import classes from "./default.module.scss"
 
 interface CartProps{
-    cart:APIobj[];
+    cart:objAmount[];
     setCart:Function;
     handleRemove:Function
 }
@@ -17,7 +17,7 @@ export default function Cart(props:CartProps){
             { props.cart[0]
             ? props.cart.map((el, i) => 
                 <li key={i} className={classes.Cart__list__listItem}>
-                    <p className={classes.Cart__list__listItem__itemTitle}>{el.title}</p>
+                    <p className={classes.Cart__list__listItem__itemTitle}>{el.title} + {el.amount}</p>
                     <button
                         className={classes.Cart__list__listItem__eraseButton}
                         onClick={() => props.handleRemove()}>Delete</button>

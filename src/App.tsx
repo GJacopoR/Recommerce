@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import Navbar from './Components/Navbar/component';
 import Cart from './Views/Cart/component';
+import Form from './Views/Form/component';
 import Home from './Views/Home/component';
 import { objAmount } from './Views/Home/model';
 import Product from './Views/Product/component';
@@ -101,7 +102,19 @@ const API:objAmount[] = [
 
 function App() {
 
+    const [repository, setRepository] = useState<objAmount[]>(API)
+
     const [cart, setCart] = useState<objAmount[]>([])
+    
+    const [searchFilter, setSearchFilter] = useState<string>('')
+
+    useEffect(() => {
+        setRepository(API)
+        setRepository(repository.filter((el) => el.title.toLowerCase().includes(searchFilter)))
+        // setRepository((prevState:objAmount[]) => {
+        //     let newState = [...prevState]
+        //     return searchFilter ? newState.filter((el) => el.title.toLowerCase().includes(searchFilter)) : newState}
+    }, [searchFilter])
 
     const handleRemove = (id:string) => {
         let erasedProduct!:objAmount;
@@ -146,9 +159,11 @@ function App() {
             </section>
             <section className="App__body">
             <Routes>
-                <Route path="/" element={<Home API={API} handleAddToCart={handleAddToCart}/> }/>
-                <Route path="/:product" element={ <Product API={API} /> }/>
+                <Route path="/" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart}/> }/>
+                <Route path="/:product" element={ <Product repository={repository} /> }/>
                 <Route path="/cart" element={ <Cart cart={cart} setCart={setCart} handleRemove={handleRemove}/> }/>
+                <Route path="/form" element={ <Form /> }/>
+                <Route path="*" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart}/> }/>
             </Routes>
             </section>
         </main>

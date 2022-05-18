@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom";
 import { objAmount } from "../Home/model";
 
 interface ProductProps{
-    API:objAmount[]
+    repository:objAmount[]
 }
 
 export default function Product(props:ProductProps){
 
     const productURI = useParams()
 
-    const product:objAmount = props.API.filter((el) => {return (el.title.toLowerCase().split(" ").join("-") === productURI.product)})[0]
+    const product:objAmount = props.repository.filter((el) => {return (el.title.toLowerCase().split(" ").join("-") === productURI.product)})[0]
 
     return (product 
         ? <section className={classes.Product}>

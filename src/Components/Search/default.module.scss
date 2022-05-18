@@ -1,0 +1,24 @@
+.searchForm{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &__module{
+        width: 80%;
+        background-color: #ffebc1;
+        border: 0;
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-size: medium;
+    }
+
+    &__button{
+        position: absolute;
+        background-color: #ff9346;
+        border: 0;
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-size: medium;
+        font-weight: bold;
+    }
+}

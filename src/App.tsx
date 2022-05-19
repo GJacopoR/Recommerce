@@ -117,36 +117,27 @@ function App() {
     }, [searchFilter])
 
     const handleRemove = (id:string) => {
-        let erasedProduct!:objAmount;
+        let eraseProduct:objAmount;
 
         cart.forEach( el => {
             if(el.id === id){
-                erasedProduct = el
+                eraseProduct = el
             }
         })
 
-        setCart(cart.splice(cart.indexOf(erasedProduct)+1,1))
+        setCart((prevState: objAmount[]) => {
+            console.log(prevState)
+            let newState = [...prevState]
+            newState.splice(cart.indexOf(eraseProduct)+1,1)
+            console.log(newState)
+            return newState
+        })
     }
 
     const handleAddToCart = (item:objAmount) => {
         setCart((prevState: objAmount[]) => {
             let newState = [...prevState]
-            const isThere:boolean = newState.some(el => el.id === item.id)
-            if(isThere){
-                for (let i = 0; i < newState.length; i++) {
-                    if(newState[i].id === item.id){
-                        console.log(newState[i].amount)
-                        newState[i].amount++
-                    }
-                }
-            } else {
-                newState.push(item)
-                for (let i = 0; i < newState.length; i++) {
-                    if(newState[i].id === item.id){
-                        newState[i].amount = 1
-                    }
-                }
-            }
+            newState.push(item)
             return newState
         })
     }

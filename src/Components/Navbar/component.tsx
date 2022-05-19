@@ -8,7 +8,9 @@ interface NavbarProps{
 
 export default function Navbar(props:NavbarProps) {
 
-    let cartItems:number = props.cart[0] ? (props.cart.map(el => el.amount).reduce((t, n) => t+n)) : 0
+    // let cartItems:number = props.cart[0] ? (props.cart.map(el => el.amount).reduce((t, n) => t+n)) : 0
+
+    let cartItems = props.cart.length
 
     return <nav className={classes.Navbar}>
         <section className={classes.Navbar__logo}>

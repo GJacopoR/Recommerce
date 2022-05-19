@@ -11,8 +11,6 @@ interface HomeProps{
 
 export default function Home(props:HomeProps) {
 
-    console.log(props.repository)
-
     return <section className={classes.Home}>
         <div className={classes.Home__toolbar}>
             <span className={classes.Home__toolbar__tagsContainer}>

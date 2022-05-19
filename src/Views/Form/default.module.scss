@@ -46,13 +46,14 @@
             align-items: center;
 
             &__button{
-                background-color: #ff9346;
-                border: 0;
-                border-radius: 10px;
-                padding: 10px 20px;
                 margin-top: 5%;
-                font-size: medium;
-                font-weight: bold;
+                background-color: #ff9346;
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: 3px solid white ;
+                font-size: large;
+                font-weight: 700;
+                color: #eee;
             }
         }
     }

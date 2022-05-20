@@ -34,12 +34,17 @@
                 flex-wrap: wrap;
 
                 &__itemImageContainer{
+                    width: 50px;
+                    height: 50px;
+                    background-color: #eee;
                     display: flex;
+                    justify-content: center;
                     align-items: center;
+                    border: 2px solid #fdbc0b;
+                    border-radius: 10px;
 
                     &__image{
-                        width: 50px;
-                        border-radius: 10px;
+                        max-height: 40px;
                     }
 
                 }
@@ -67,6 +72,7 @@
                     &__itemFinalPrice{
                         font-size: large;
                         font-weight: 700;
+                        margin-left: 3px;
                     }
                 }
             }
@@ -97,6 +103,7 @@
 
                     &__itemPricing{
                     width: 95%;
+                    justify-content: center;
                     flex-wrap: wrap;
                     }
                     margin-bottom: 3%;
@@ -115,6 +122,18 @@
             }
         }
 
+        &__totalContainer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: x-large;
+            font-weight: bold;
+
+            &__total{
+                margin-left: 1%;
+            }
+        }
+
         &__goToForm{
             width: 100%;
             display: flex;
@@ -123,6 +142,35 @@
 
             &__container__button{
                 margin-top: 20%;
+                background-color: #ff9346;
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: 3px solid white ;
+                font-size: large;
+                font-weight: 700;
+                color: #eee;
+            }
+        }
+    }
+
+    &__emptyContainer{
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        color: #eee;
+        font-size: larger;
+
+        &__goToHome{
+            margin-top: 10%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+
+            &__button{
                 background-color: #ff9346;
                 padding: 10px 20px;
                 border-radius: 10px;

@@ -11,6 +11,8 @@ export default function Search(props:SearchProps) {
 
     return <form className={classes.searchForm}>
         <input type="text" placeholder="Ricerca..." className={classes.searchForm__module} onChange={(e) => setValue(e.target.value)}/>
-        <button className={classes.searchForm__button} onClick={(e) => {e.preventDefault(); props.setSearchFilter(value.toLowerCase())}}>Go</button>
+        <div className={classes.searchForm__buttonContainer}>
+            <button className={classes.searchForm__buttonContainer__button} onClick={(e) => {e.preventDefault(); props.setSearchFilter(value.toLowerCase())}}>Go</button>
+        </div>
     </form>
 }

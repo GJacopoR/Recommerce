@@ -1,0 +1,20 @@
+.Filters{
+
+    &__container{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0;
+
+        &__filter__button{
+            width: 90px;
+            background-color: #ffebc1;
+            border: 3px solid #ff9346;
+            border-radius: 15px;
+            margin: 3px 5px;
+            padding: 3px;
+        }
+    }
+}

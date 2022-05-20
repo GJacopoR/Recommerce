@@ -12,16 +12,36 @@
         font-size: medium;
     }
 
-    &__button{
-        position: absolute;
-        background-color: #ff9346;
-        padding: 3px 5px;
-        border-radius: 10px;
-        border: 0;
-        margin-right: 2px;
-        font-size: large;
-        color: #eee;
-        font-size: medium;
-        font-weight: bold;
+    &__module:active, &__module:focus {
+        outline: none;
+    }
+
+    &__buttonContainer{
+        position: relative;
+
+        &__button{
+            position: absolute;
+            top: -12px;
+            left: -35px;
+            background-color: #ff9346;
+            padding: 3px 5px;
+            border-radius: 10px;
+            border: 0;
+            margin-right: 2px;
+            font-size: large;
+            color: #eee;
+            font-size: medium;
+            font-weight: bold;
+        }
+    }
+}
+
+@media screen and (max-width:680px) {
+    .searchForm{
+        justify-content: center;
+
+        &__button{
+            left: 50px;
+        }
     }
 }

@@ -108,30 +108,32 @@ function App() {
     
     const [searchFilter, setSearchFilter] = useState<string>('')
 
+    const [categoryFilter, setCategoryFilter] = useState<string>('')
+
     useEffect(() => {
-        setRepository(API)
-        setRepository(repository.filter((el) => el.title.toLowerCase().includes(searchFilter)))
-        // setRepository((prevState:objAmount[]) => {
-        //     let newState = [...prevState]
-        //     return searchFilter ? newState.filter((el) => el.title.toLowerCase().includes(searchFilter)) : newState}
+        if(searchFilter){
+            setRepository(API)
+            setRepository(repository.filter((el) => el.title.toLowerCase().includes(searchFilter)))
+        } else {
+            setRepository(API)
+        }
     }, [searchFilter])
 
+    useEffect(() => {
+        if(categoryFilter){
+            console.log(categoryFilter)
+            setRepository(API)
+            setRepository(repository.filter((el) => el.categoriesIDs.includes(categoryFilter)))
+            console.log(repository)
+        } else {
+            console.log(categoryFilter)
+            setRepository(API)
+            console.log(repository)
+        }
+    }, [categoryFilter])
+
     const handleRemove = (id:string) => {
-        let eraseProduct:objAmount;
-
-        cart.forEach( el => {
-            if(el.id === id){
-                eraseProduct = el
-            }
-        })
-
-        setCart((prevState: objAmount[]) => {
-            console.log(prevState)
-            let newState = [...prevState]
-            newState.splice(cart.indexOf(eraseProduct)+1,1)
-            console.log(newState)
-            return newState
-        })
+        setCart(cart.filter(el => el.id !== id))
     }
 
     const handleAddToCart = (item:objAmount) => {
@@ -150,17 +152,35 @@ function App() {
             </section>
             <section className="App__body">
             <Routes>
-                <Route path="/" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart}/> }/>
+                <Route path="/" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart} setCategoryFilter={setCategoryFilter}/> }/>
                 <Route path="/:product" element={ <Product repository={repository} /> }/>
                 <Route path="/cart" element={ <Cart cart={cart} setCart={setCart} handleRemove={handleRemove}/> }/>
                 <Route path="/form" element={ <Form /> }/>
-                <Route path="*" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart}/> }/>
+                <Route path="*" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart} setCategoryFilter={setCategoryFilter}/> }/>
             </Routes>
             </section>
         </main>
         </Router>
     );
 }
+
+// const handleRemove = (id:string) => {
+//     let eraseProduct:objAmount;
+
+//     cart.forEach( el => {
+//         if(el.id === id){
+//             eraseProduct = el
+//         }
+//     })
+
+//     setCart((prevState: objAmount[]) => {
+//         console.log(prevState)
+//         let newState = [...prevState]
+//         newState.splice(cart.indexOf(eraseProduct)+1,1)
+//         console.log(newState)
+//         return newState
+//     })
+// }
 
 // length={0} toString={undefined} toLocaleString={undefined} pop={function (): ProductProps | undefined {
 //   throw new Error('Function not implemented.');

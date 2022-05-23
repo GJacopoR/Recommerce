@@ -5,16 +5,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
-        padding: 0;
+        padding: 0 10%;
+
 
         &__filter__button{
-            width: 90px;
+            width:110px;
             background-color: #ffebc1;
             border: 3px solid #ff9346;
             border-radius: 15px;
             margin: 3px 5px;
             padding: 3px;
+            cursor: pointer;
+        }
+    }
+
+    @media screen and (max-width: 680px) {
+        &__container{
+            flex-wrap: wrap;
         }
     }
 }

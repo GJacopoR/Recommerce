@@ -34,6 +34,7 @@
         &__addToCart{
             width: 10%;
             z-index: 2;
+            cursor: pointer;
 
             & svg {
                 transform: rotateY(180deg);

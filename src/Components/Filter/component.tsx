@@ -16,7 +16,7 @@ export default function Filter(props:FilterProps){
                 <button className={classes.Filters__container__filter__button} onClick={() => props.setCategoryFilter(el)} >{el[0].toUpperCase() + el.substring(1)}</button>
             </li>)}
             <li className={classes.Filters__container__filter}>
-                <button className={classes.Filters__container__filter__button} onClick={() => props.setCategoryFilter('')} >Nessun filtro</button>
+                <button className={classes.Filters__container__filter__button} onClick={() => props.setCategoryFilter('')} >Rimuovi filtri</button>
             </li>
         </ul>
     </section>

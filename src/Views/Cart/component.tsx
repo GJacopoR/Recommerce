@@ -67,5 +67,3 @@ export default function Cart(props:CartProps){
     </section>
     
 }
-
-// pz. ×

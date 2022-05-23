@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { objAmount } from "../Home/model";
 
 interface ProductProps{
-    repository:objAmount[]
+    repository:objAmount[];
+    handleAddToChart:Function
 }
 
 export default function Product(props:ProductProps){

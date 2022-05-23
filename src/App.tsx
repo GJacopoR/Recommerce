@@ -121,14 +121,10 @@ function App() {
 
     useEffect(() => {
         if(categoryFilter){
-            console.log(categoryFilter)
             setRepository(API)
             setRepository(repository.filter((el) => el.categoriesIDs.includes(categoryFilter)))
-            console.log(repository)
         } else {
-            console.log(categoryFilter)
             setRepository(API)
-            console.log(repository)
         }
     }, [categoryFilter])
 
@@ -153,7 +149,7 @@ function App() {
             <section className="App__body">
             <Routes>
                 <Route path="/" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart} setCategoryFilter={setCategoryFilter}/> }/>
-                <Route path="/:product" element={ <Product repository={repository} /> }/>
+                <Route path="/:product" element={ <Product repository={repository} handleAddToChart={handleAddToCart} /> }/>
                 <Route path="/cart" element={ <Cart cart={cart} setCart={setCart} handleRemove={handleRemove}/> }/>
                 <Route path="/form" element={ <Form /> }/>
                 <Route path="*" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart} setCategoryFilter={setCategoryFilter}/> }/>

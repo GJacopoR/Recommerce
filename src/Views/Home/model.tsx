@@ -1,10 +1,10 @@
 export interface objAmount{
     title: string;
-    categoriesIDs: string[]; 
+    categories: string[]; 
     imageURL: string;
     popularity: number;
     description: string;
-    id: string;
+    slugid: string;
     pricing: {
         price: string;
         discount?: string | undefined; 

@@ -18,7 +18,7 @@ export default function Product(props:ProductProps){
             <div className={classes.Product__toolbar}>
                 <span className={classes.Product__toolbar__categoriesContainer}>
                     <ul className={classes.Product__toolbar__categoriesContainer__categories}>
-                        {product.categoriesIDs.map((el, i) => <li key={i} className={classes.Product__toolbar__categoriesContainer__categories__category}>{el}</li>)}
+                        {product.categories.map((el, i) => <li key={i} className={classes.Product__toolbar__categoriesContainer__categories__category}>{el}</li>)}
                     </ul>
                 </span>
                 <span className={classes.Product__toolbar__titleContainer}>

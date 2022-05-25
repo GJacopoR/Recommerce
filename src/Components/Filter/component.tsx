@@ -8,7 +8,7 @@ interface FilterProps{
 
 export default function Filter(props:FilterProps){
 
-    const activeCategories:string[] = Array.from(new Set (props.repository.map( el => el.categoriesIDs).flat()))
+    const activeCategories:string[] = Array.from(new Set (props.repository.map( el => el.categories).flat()))
 
     return <section className={classes.Filters}>
         <ul className={classes.Filters__container}>

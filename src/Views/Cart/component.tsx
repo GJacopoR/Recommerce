@@ -10,7 +10,7 @@ interface CartProps{
 
 export default function Cart(props:CartProps){
 
-    const cart:(objAmount | number)[][] = props.cart.map(el => [el, props.cart.filter((x:objAmount) => x.id === el.id).length]).filter((value, index, self) => index === self.findIndex((t) => t[0] === value[0]))
+    const cart:(objAmount | number)[][] = props.cart.map(el => [el, props.cart.filter((x:objAmount) => x.slugid === el.slugid).length]).filter((value, index, self) => index === self.findIndex((t) => t[0] === value[0]))
 
     const discounted = (item:objAmount):string => {
         if(item.pricing.discount){

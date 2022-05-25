@@ -27,7 +27,7 @@ export default function Home(props:HomeProps) {
         </div>
         <div className={classes.Home__cardsContainer}>
             {props.repository.map((el, i) => {
-                return <Card key={el.id} handleAddToCart={props.handleAddToCart} repository={props.repository[i]}/>
+                return <Card key={el.slugid} handleAddToCart={props.handleAddToCart} repository={props.repository[i]}/>
             })}
         </div>
     </section>

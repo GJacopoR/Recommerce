@@ -39,6 +39,13 @@
                 height: 45%;
             }
         }
+
+        @media screen and (max-width:680px) {
+            &__body{
+                width: 50%;
+                height: 30%;
+            }
+        }
     }
 
 }

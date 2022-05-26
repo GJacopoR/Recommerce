@@ -14,5 +14,6 @@ export default function Search(props:SearchProps) {
         <div className={classes.searchForm__buttonContainer}>
             <button className={classes.searchForm__buttonContainer__button} onClick={(e) => {e.preventDefault(); props.setSearchFilter(value.toLowerCase())}}>Go</button>
         </div>
+        <button className={classes.searchForm__nullButton} onClick={(e) => {e.preventDefault(); props.setSearchFilter('')}}>×</button>
     </form>
 }

@@ -34,6 +34,18 @@
             font-weight: bold;
         }
     }
+
+    &__nullButton{
+        background-color: #ff9346;
+        border: 3px solid white;
+        border-radius: 20px;
+        text-align: center;
+        margin-left: 3px;
+        padding: 3px 9px;
+        color: #eee;
+        font-size: large;
+        font-weight: bold;
+    }
 }
 
 @media screen and (max-width:680px) {

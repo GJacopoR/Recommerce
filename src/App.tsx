@@ -147,7 +147,7 @@ function App() {
         }
     }, [categoryFilter])
 
-    const handleRemove = (id:string) => {
+    const handleRemoveAll = (id:string) => {
         setCart(cart.filter(el => el.slugid !== id))
     }
 
@@ -155,6 +155,14 @@ function App() {
         setCart((prevState: objAmount[]) => {
             let newState = [...prevState]
             newState.push(item)
+            return newState
+        })
+    }
+
+    const handleDecrement = (item:objAmount) => {
+        setCart((prevState: objAmount[]) => {
+            let newState = [...prevState]//.sort()
+            newState.splice(newState.indexOf(item), 1)
             return newState
         })
     }
@@ -170,7 +178,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart} setCategoryFilter={setCategoryFilter}/> }/>
                     <Route path="/:product" element={ <Product repository={repository} handleAddToChart={handleAddToCart} /> }/>
-                    <Route path="/cart" element={ <Cart cart={cart} setCart={setCart} handleRemove={handleRemove}/> }/>
+                    <Route path="/cart" element={ <Cart cart={cart} setCart={setCart} handleRemoveAll={handleRemoveAll} handleIncrement={handleAddToCart} handleDecrement={handleDecrement}/> }/>
                     <Route path="/form" element={ <Form /> }/>
                     <Route path="*" element={<Home repository={repository} setSearchFilter={setSearchFilter} handleAddToCart={handleAddToCart} setCategoryFilter={setCategoryFilter}/> }/>
                 </Routes>

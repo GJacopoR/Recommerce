@@ -1,6 +1,11 @@
 import classes from './default.module.scss';
 
-export default function DeleteFromCartModal(){
+interface DeleteFromCartModalProps{
+    setDeleteCheck:Function;
+    setModal:Function
+}
+
+export default function DeleteFromCartModal(props:DeleteFromCartModalProps){
     return <section>
         <div className={classes.Container__overlay}></div>
         <main className={classes.Container__body}>
@@ -11,10 +16,10 @@ export default function DeleteFromCartModal(){
             </header>
             <section className={classes.Container__body__bottomContainer}>
                 <a className={classes.Container__body__bottomContainer__backButtonContainer}>
-                    <button className={classes.Container__body__bottomContainer__backButtonContainer__backButton} >Indietro</button>
+                    <button className={classes.Container__body__bottomContainer__backButtonContainer__backButton} onClick={()=>{props.setModal(false)}}>Indietro</button>
                 </a>
                 <a className={classes.Container__body__bottomContainer__proceedButtonContainer}>
-                    <button className={classes.Container__body__bottomContainer__proceedButtonContainer__proceedButton} onClick={()=>{alert('handlePayment()')}}>Procedi</button>
+                    <button className={classes.Container__body__bottomContainer__proceedButtonContainer__proceedButton} onClick={() => {props.setModal(false); props.setDeleteCheck(true)}}>Procedi</button>
                 </a>
             </section>
         </main>

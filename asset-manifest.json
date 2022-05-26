@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/recommerce/static/css/main.5a02f727.css",
+    "main.css": "/recommerce/static/css/main.c7726a37.css",
     "main.js": "/recommerce/static/js/main.a414d028.js",
     "static/js/787.1c8c86b6.chunk.js": "/recommerce/static/js/787.1c8c86b6.chunk.js",
     "index.html": "/recommerce/index.html",
-    "main.5a02f727.css.map": "/recommerce/static/css/main.5a02f727.css.map",
+    "main.c7726a37.css.map": "/recommerce/static/css/main.c7726a37.css.map",
     "main.a414d028.js.map": "/recommerce/static/js/main.a414d028.js.map",
     "787.1c8c86b6.chunk.js.map": "/recommerce/static/js/787.1c8c86b6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a02f727.css",
+    "static/css/main.c7726a37.css",
     "static/js/main.a414d028.js"
   ]
 }

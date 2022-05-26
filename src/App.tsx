@@ -102,7 +102,7 @@ import Product from './Views/Product/component';
 
 function App() {
 
-    const [API, setAPI] = useState<objAmount[]>([]) // data from API just elaborated
+    const [API, setAPI] = useState<objAmount[]>([]) // data from API just formatted
 
     const [repository, setRepository] = useState<objAmount[]>([]) // data from API eventually filtered
 
@@ -125,8 +125,6 @@ function App() {
             setAPI(API)
         })
     },[])
-
-    console.log(API)
 
     useEffect(() => {
         if(searchFilter){

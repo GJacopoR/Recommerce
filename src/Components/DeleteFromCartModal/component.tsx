@@ -6,7 +6,7 @@ interface DeleteFromCartModalProps{
 }
 
 export default function DeleteFromCartModal(props:DeleteFromCartModalProps){
-    return <section>
+    return <section className={classes.Container}>
         <div className={classes.Container__overlay}></div>
         <main className={classes.Container__body}>
             <header className={classes.Container__body__bodyTextContainer}>

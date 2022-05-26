@@ -1,0 +1,44 @@
+.Container{
+    margin: 0;
+    padding: 0;
+    
+    &__overlay{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: -25%;
+        left: -25%;
+        height: 150vh;
+        width: 150vw;
+        z-index: 100;
+        background-color: #00000050;
+        overflow: clip;
+
+        &__body{
+            position: absolute;
+            padding: 3%;
+            height: 15%;
+            width: 20%;
+            background-color: #eee;
+            z-index: 101;
+            border-radius: 15px;
+    
+            &__titleContainer{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                height: 30%;
+            }
+    
+            &__bodyContainer{
+                display: flex;
+                justify-content: space-evenly;
+                height: 45%;
+            }
+        }
+    }
+
+}

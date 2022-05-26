@@ -45,7 +45,7 @@ export default function Cart(props:CartProps){
                         </div>
                     </div>
 
-                    <button className={classes.Cart__list__listItem__eraseButton} onClick={() => props.handleRemove(el[0].id)}>Delete</button>
+                    <button className={classes.Cart__list__listItem__eraseButton} onClick={() => props.handleRemove(el[0].slugid)}>Delete</button>
                 </li>)}
                 <div className={classes.Cart__list__totalContainer}>
                     <span className={classes.Cart__list__totalContainer__label}>Totale :</span>

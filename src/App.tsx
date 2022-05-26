@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import Navbar from './Components/Navbar/component';
@@ -102,9 +102,9 @@ import Product from './Views/Product/component';
 
 function App() {
 
-    let API:objAmount[] = []
+    const [API, setAPI] = useState<objAmount[]>([]) // data from API just elaborated
 
-    const [repository, setRepository] = useState<objAmount[]>([])
+    const [repository, setRepository] = useState<objAmount[]>([]) // data from API eventually filtered
 
     const [cart, setCart] = useState<objAmount[]>([])
     
@@ -116,20 +116,22 @@ function App() {
         fetch('http://localhost:1337/api/products/?populate=*')
         .then(res => res.json())
         .then(data => {
-            API = data.data.map((el:any) => el.attributes)
+            let API:objAmount[] = data.data.map((el:any) => el.attributes)
             API.map((el:any) => (el.brand.data) ? el.brand = el.brand.data.attributes.name : el.brand = '')
             API.map((el:any) => (el.rating) ? el.rating = el.rating.rating : el.rating = [])
             API.map((el:any) => el.categories = el.categories.data.map((el:any) => el.attributes.category))
+            API.map((el:any) => (el.product_carousel.data) ? el.product_carousel = el.product_carousel.data.attributes.images.images : el.product_carousel = el.imageURL)
             setRepository(API)
+            setAPI(API)
         })
-    },[searchFilter])
+    },[])
 
-    console.log(repository)
     console.log(API)
 
     useEffect(() => {
         if(searchFilter){
             setRepository(API)
+            console.log(searchFilter)
             setRepository(repository.filter((el) => el.title.toLowerCase().includes(searchFilter)))
         } else {
             setRepository(API)

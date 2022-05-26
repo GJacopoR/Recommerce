@@ -1,0 +1,128 @@
+.Container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__overlay{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        height: 200vh;
+        width: 200vw;
+        z-index: 100;
+        background-color: #00000050;
+        overflow: clip;
+    }
+
+    &__body{
+        position: absolute;
+        top: 0;
+        padding: 3%;
+        height: 90%;
+        width: 60%;
+        background-color: #eee;
+        z-index: 101;
+        border-radius: 15px;
+
+        &__titleContainer{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            height: 30%;
+        }
+
+        &__bodyContainer{
+            display: flex;
+            justify-content: space-evenly;
+            height: 45%;
+
+            &__leftContainer__methodContainer, &__rightContainer__methodContainer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 70%;
+                width: 7em;
+                padding: 10% 0;
+                border: 1px solid lightgray;
+                border-radius: 10px;
+
+
+
+                & img{
+                    width: 70px;
+                    padding: 10% 0;
+                }
+            }
+            
+            &__leftContainer__radioContainer, &__rightContainer__radioContainer{
+                display: flex;
+                justify-content: center;
+                margin-top: 5%;
+            }
+        }
+
+        &__bottomContainer{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 25%;
+
+            &__backButtonContainer__backButton{
+                background-color: #ff3700;
+                border-radius: 5px;
+                border: 0px;
+                padding: 10px 30px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            &__backButtonContainer__backButton:hover{
+                background-color: #ff5e00;
+                transition: .5s;
+            }
+
+            &__proceedButtonContainer__proceedButton{
+                background-color: #00a600;
+                border-radius: 5px;
+                border: 0px;
+                padding: 10px 30px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            &__proceedButtonContainer__proceedButton:hover{
+                background-color: #00b900;
+                transition: .5s;
+            }
+        }
+    }
+
+    @media screen and (max-width:680px) {
+        &__body{
+            height: 60%;
+            width: 90%;
+        }
+    }
+}
+
+#paymentCard:checked ~ .Container__body__bodyContainer__rightContainer__methodContainer__method{
+    background-color: #00a600;
+}
+
+#paymentPayPal:checked ~ .Container__body__bodyContainer__leftContainer__methodContainer__method{
+    background-color: #00a600;
+}
+
+.Container__body__bodyContainer__rightContainer__methodContainer:active{
+    border: 1px solid gray;
+}
+
+.Container__body__bodyContainer__leftContainer__methodContainer:active{
+    border: 1px solid gray;
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useInput from '../../app/useInput';
+import PaymentModal from '../../Components/PaymentModal/component';
 import classes from './default.module.scss';
 
 class Customer{
@@ -29,9 +30,12 @@ export default function Form() {
     const [address, setAddress] = useState<string>('')
     const [cap, setCap] = useState<string>('')
     const [telephone, setTelephone] = useState<string>('')
+
+    const [payment, setPayment] = useState<boolean>(false)
     
     const handleSubmit = () => {
-        alert("L'ordine sarà inviato a " + name + ' ' + surname)
+        setPayment(true)
+        // alert("L'ordine sarà inviato a " + name + ' ' + surname)
     }
 
     return <section className={classes.formContainer}>
@@ -52,10 +56,12 @@ export default function Form() {
             <input type="text" placeholder="Inserire l'indirizzo" name='address' className={classes.formContainer__form__module} onChange={(e) => setAddress(e.target.value)}/>
             <input type="text" placeholder='Inserire il C.A.P.' name='cap' className={classes.formContainer__form__module} onChange={(e) => setCap(e.target.value)}/>
             <input type="text" placeholder='Inserire il numero di cellulare' name='telephone' className={classes.formContainer__form__module} onChange={(e) => setTelephone(e.target.value)}/>
-            <Link className={classes.formContainer__form__buttonContainer} to={'/payment'}>
-                <button type="submit" className={classes.formContainer__form__buttonContainer__button}
-                onClick={handleSubmit}>Vai al pagamento</button>
-            </Link>
         </form>
+            <div className={classes.formContainer__form__buttonContainer}>
+                <button className={classes.formContainer__form__buttonContainer__button}
+                onClick={handleSubmit}>Vai al pagamento</button>
+            </div>
+
+        {payment && <PaymentModal setPayment={setPayment}/>}
     </section>
 }

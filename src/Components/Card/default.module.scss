@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .Card {
     position: relative;
     box-sizing: border-box;
@@ -63,7 +65,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: flex-end;
-        color: black;
+        color: var(--dark);
         
         &__title{
             width: 100%;

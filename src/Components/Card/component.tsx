@@ -2,7 +2,7 @@ import classes from "./default.module.scss";
 import "./default.module.scss";
 import CardBackground from "./CardBackground/component";
 import { Link } from "react-router-dom";
-import { objAmount } from "../../Views/Home/model";
+import { objAmount } from "../../app/Global/model";
 import { useAppDispatch } from "../../app/Redux/hooks";
 import addToCartSlice from "../../app/Redux/Slices/addToCart.slice";
 import { cart } from "../../app/Redux/Slices/addToCart.slice";

@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .searchForm{
     display: flex;
     justify-content: flex-end;
@@ -5,7 +7,7 @@
 
     &__module{
         width: 80%;
-        background-color: #ffebc1;
+        background-color: var(--cream);
         border: 0;
         border-radius: 10px;
         padding: 5px 10px;
@@ -23,13 +25,13 @@
             position: absolute;
             top: -12px;
             left: -35px;
-            background-color: #ff9346;
+            background-color: var(--main-bg);
             padding: 3px 5px;
             border-radius: 10px;
             border: 0;
             margin-right: 2px;
             font-size: large;
-            color: #eee;
+            color: var(--light-gray);
             font-size: medium;
             font-weight: bold;
             cursor: pointer;
@@ -37,13 +39,13 @@
     }
 
     &__nullButton{
-        background-color: #ff9346;
-        border: 3px solid white;
+        background-color: var(--main-bg);
+        border: 3px solid var(--white);
         border-radius: 20px;
         text-align: center;
         margin-left: 3px;
         padding: 3px 9px;
-        color: #eee;
+        color: var(--light-gray);
         font-size: large;
         font-weight: bold;
         cursor: pointer;

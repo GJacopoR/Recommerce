@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .Container{
     margin: 0;
     padding: 0;
@@ -15,14 +17,13 @@
         width: 150vw;
         z-index: 100;
         background-color: #00000050;
-        overflow: clip;
 
         &__body{
             position: absolute;
             padding: 3%;
             height: 15%;
             width: 20%;
-            background-color: #eee;
+            background-color: var(--light-gray);
             z-index: 101;
             border-radius: 15px;
     

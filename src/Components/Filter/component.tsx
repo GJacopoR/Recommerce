@@ -1,5 +1,5 @@
 import classes from './default.module.scss';
-import { objAmount } from '../../Views/Home/model';
+import { objAmount } from '../../app/Global/model';
 
 interface FilterProps{
     repository:objAmount[];

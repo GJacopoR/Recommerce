@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .Container{
     margin: 0;
     padding: 0;
@@ -24,7 +26,7 @@
         padding: 3%;
         height: 90%;
         width: 60%;
-        background-color: #eee;
+        background-color: var(--light-gray);
         z-index: 101;
         border-radius: 15px;
 

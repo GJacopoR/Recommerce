@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { objAmount } from '../../../Views/Home/model';
+import { objAmount } from '../../Global/model';
 
 const initialState:objAmount[] = []
 

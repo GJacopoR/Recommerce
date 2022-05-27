@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import useInput from '../../app/useInput';
 import PaymentModal from '../../Components/PaymentModal/component';
 import classes from './default.module.scss';
 

@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .Home{
     display: flex;
     justify-content: center;
@@ -19,7 +21,7 @@
             width: 40%;
             margin: 3% 0;
             font-size: xx-large;
-            color: #222;
+            color: var(--dark);
             z-index: 10;
         }
 
@@ -68,7 +70,7 @@
             display: flex;
             justify-content: center;
             width: 30%;
-            color: white;
+            color: var(--white);
             z-index: 10;
         }
     }

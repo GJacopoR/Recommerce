@@ -1,5 +1,5 @@
 body {
-  background: #ff9346;
+  background: var(--main-bg);
   background: -moz-radial-gradient(circle at 50% 0, rgba(255,147,70,1) 10%, #ffba89 20%, rgba(255,199,160,1) 35%, rgba(255,186,137,1) 50%);
   background: -webkit-radial-gradient(circle at 50% 0, rgba(255,147,70,1) 10%, rgba(255,186,137,1) 20%, rgba(255,199,160,1) 35%, rgba(255,186,137,1) 50%);
   background: radial-gradient(circle at 50% 0, rgba(255,147,70,1) 10%, rgba(255,186,137,1) 20%, rgba(255,199,160,1) 35%, rgba(255,186,137,1) 50%);

@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .Container{
     margin: 0;
     padding: 0;
@@ -24,7 +26,7 @@
         padding: 3%;
         height: 90%;
         width: 60%;
-        background-color: #eee;
+        background-color: var(--light-gray);
         z-index: 101;
         border-radius: 15px;
 
@@ -47,7 +49,7 @@
                 height: 70%;
                 width: 7em;
                 padding: 10% 0;
-                border: 1px solid lightgray;
+                border: 1px solid var(--light-gray);
                 border-radius: 10px;
 
 
@@ -72,32 +74,32 @@
             height: 25%;
 
             &__backButtonContainer__backButton{
-                background-color: #ff3700;
+                background-color: var(--red);
                 border-radius: 5px;
                 border: 0px;
                 padding: 10px 30px;
-                color: white;
+                color: var(--white);
                 font-weight: bold;
                 cursor: pointer;
             }
 
             &__backButtonContainer__backButton:hover{
-                background-color: #ff6000;
+                background-color: var(--hover-red);
                 transition: .3s;
             }
 
             &__proceedButtonContainer__proceedButton{
-                background-color: #00a600;
+                background-color: var(--green);
                 border-radius: 5px;
                 border: 0px;
                 padding: 10px 30px;
-                color: white;
+                color: var(--white);
                 font-weight: bold;
                 cursor: pointer;
             }
 
             &__proceedButtonContainer__proceedButton:hover{
-                background-color: #00b900;
+                background-color: var(--hover-green);
                 transition: .3s;
             }
         }
@@ -112,17 +114,17 @@
 }
 
 #paymentCard:checked ~ .Container__body__bodyContainer__rightContainer__methodContainer__method{
-    background-color: #00a600;
+    background-color: var(--green);
 }
 
 #paymentPayPal:checked ~ .Container__body__bodyContainer__leftContainer__methodContainer__method{
-    background-color: #00a600;
+    background-color: var(--green);
 }
 
 .Container__body__bodyContainer__rightContainer__methodContainer:active{
-    border: 1px solid gray;
+    border: 1px solid var(--gray);
 }
 
 .Container__body__bodyContainer__leftContainer__methodContainer:active{
-    border: 1px solid gray;
+    border: 1px solid var(--gray);
 }

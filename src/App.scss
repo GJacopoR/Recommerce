@@ -1,10 +1,12 @@
+@import './app/Global/colors.css';
+
 .App{
     height: 100%;
     margin: 5vh 3%;
     padding: 3%;
-    border: 5px solid white;
+    border: 5px solid var(--white);
     border-radius: 50px;
-    background-color: #ffebc1;
+    background-color: var(--cream);
     z-index: -2;
   
     &__background_banner{
@@ -15,11 +17,11 @@
       height: 30vh;
       width: 90%;
       border-radius: 35px;
-      background: #fdbc0b;
+      background: var(--yellow);
       background: -moz-radial-gradient(circle at 50% 0%, rgba(253,188,11,1) 15%, rgba(253,192,28,1) 15%, rgba(253,192,28,1) 30%, rgba(253,188,11,1) 30%, rgba(253,188,11,1) 55%, rgba(253,192,28,1) 55%, rgba(253,193,14,1) 70%);
       background: -webkit-radial-gradient(circle at 50% 0%, rgba(253,188,11,1) 15%, rgba(253,192,28,1) 15%, rgba(253,192,28,1) 30%, rgba(253,188,11,1) 30%, rgba(253,188,11,1) 55%, rgba(253,192,28,1) 55%, rgba(253,193,14,1) 70%);
       background: radial-gradient(circle at 50% 0%, rgba(253,188,11,1) 15%, rgba(253,192,28,1) 15%, rgba(253,192,28,1) 30%, rgba(253,188,11,1) 30%, rgba(253,188,11,1) 55%, rgba(253,192,28,1) 55%, rgba(253,193,14,1) 70%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdbc0b",endColorstr="#fdc10e",GradientType=1);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--yellow)",endColorstr="#fdc10e",GradientType=1);
     }
   
     @media screen and (max-width: 750px) {

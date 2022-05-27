@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar/component';
 import Cart from './Views/Cart/component';
 import Form from './Views/Form/component';
 import Home from './Views/Home/component';
-import { objAmount } from './Views/Home/model';
+import { objAmount } from './app/Global/model';
 import Product from './Views/Product/component';
 
 // const API:objAmount[] = [

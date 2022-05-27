@@ -2,7 +2,7 @@ import Card from "../../Components/Card/component";
 import Filter from "../../Components/Filter/component";
 import Search from "../../Components/Search/component";
 import classes from "./default.module.scss";
-import { objAmount } from "./model";
+import { objAmount } from "../../app/Global/model";
 
 interface HomeProps{
     repository:objAmount[];

@@ -1,0 +1,14 @@
+:root{
+    --green: #00a600;
+    --hover-green: #00b900;
+    --red: #ff3700;
+    --hover-red: #ff6000;
+    --cream: #ffebc1;
+    --main-bg: #ff9346;
+    --yellow: #fdbc0b;
+
+    --white: white;
+    --light-gray: #eee;
+    --gray: gray;
+    --dark: #222;
+}

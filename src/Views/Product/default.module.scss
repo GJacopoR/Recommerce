@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .Product {
     position: relative;
     display: flex;
@@ -20,14 +22,14 @@
             width: 50%;
             margin: 3% 0;
             font-size: 150%;
-            color: #222;
+            color: var(--dark);
             z-index: 10;
         }
 
         &__categoriesContainer{
             display: flex;
             width: 25%;
-            color: white;
+            color: var(--white);
             z-index: 10;
 
             &__categories{
@@ -42,7 +44,7 @@
             display: flex;
             justify-content: flex-end;
             width: 25%;
-            color: white;
+            color: var(--white);
             z-index: 10;
 
             &__brand{
@@ -99,15 +101,15 @@
     &__descriptionContainer{
         width: 90%;
         box-sizing: border-box;
-        background-color: #ffebc1;
+        background-color: var(--cream);
         padding: 3%;
-        border: 3px solid white;
+        border: 3px solid var(--white);
         border-radius: 20px;
 
         &__description{
             text-align: justify;
             font-weight: 600;
-            color: #222;
+            color: var(--dark);
         }
     }
 
@@ -148,11 +150,11 @@
         &__button{
             background-color: #ffdd00;
             padding: 2%;
-            border: 3px solid white;
+            border: 3px solid var(--white);
             border-radius: 10px;
             font-size: 100%;
             font-weight: bolder;
-            color: #ff9346;
+            color: var(--main-bg);
             margin-left: 3%;
         }
 
@@ -191,7 +193,7 @@
             width: 80%;
             background-color: #ffba89;
             padding: 3%;
-            border: 3px solid white;
+            border: 3px solid var(--white);
             border-radius: 20px;
         }
     }

@@ -1,6 +1,6 @@
 import classes from "./default.module.scss";
 import { useParams } from "react-router-dom";
-import { objAmount } from "../Home/model";
+import { objAmount } from "../../app/Global/model";
 
 interface ProductProps{
     repository:objAmount[];

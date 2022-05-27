@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .Navbar{
     // position: sticky;
     top: 0;
@@ -8,7 +10,7 @@
     height: 5%;
     padding: 0 2%;
     border-radius: 30px;
-    background-color: #ffebc1;
+    background-color: var(--cream);
     z-index: 10;
     flex-wrap: wrap;
     // -webkit-box-shadow: 0px 3px 20px 1px rgba(0,0,0,0.5); 
@@ -19,7 +21,7 @@
 
         &__link{
             text-decoration: none;
-            color: #222;
+            color: var(--dark);
 
             &__pageName{
                 margin: 0;
@@ -35,11 +37,11 @@
 
         &__userTab{
             &__loginButton{
-                background-color: #ffebc1;
+                background-color: var(--cream);
                 padding: 5px 30px;
-                border: 3px solid white;
+                border: 3px solid var(--white);
                 border-radius: 10px;
-                color: #ff9346;
+                color: var(--main-bg);
                 font-size: large;
                 font-weight: bold;
             }
@@ -56,8 +58,8 @@
             &__cartFullness{
                 height: 15px;
                 min-width: 15px;
-                background-color: #ff9346;
-                border: 1px solid white;
+                background-color: var(--main-bg);
+                border: 1px solid var(--white);
                 position: absolute;
                 top: -7px;
                 left: -5px;
@@ -68,7 +70,7 @@
                     margin: 0;
                     font-size: 11px;
                     text-align: center;
-                    color: white;
+                    color: var(--white);
                 }
             }
         }

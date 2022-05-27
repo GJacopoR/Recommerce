@@ -1,3 +1,5 @@
+@import '../../app/Global/colors.css';
+
 .Filters{
 
     &__container{
@@ -10,8 +12,8 @@
 
         &__filter__button{
             width:110px;
-            background-color: #ffebc1;
-            border: 3px solid #ff9346;
+            background-color: var(--cream);
+            border: 3px solid var(--main-bg);
             border-radius: 15px;
             margin: 3px 5px;
             padding: 3px;

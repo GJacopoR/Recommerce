@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { objAmount } from "../../Views/Home/model";
+import { objAmount } from "../../app/Global/model";
 import LoginModal from "../LoginModal/component";
 import classes from "./default.module.scss";
 

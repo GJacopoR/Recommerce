@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DeleteFromCartModal from "../../Components/DeleteFromCartModal/component";
-import { objAmount } from "../Home/model";
+import { objAmount } from "../../app/Global/model";
 import classes from "./default.module.scss"
 
 interface CartProps{

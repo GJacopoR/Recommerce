@@ -112,6 +112,8 @@ function App() {
 
     const [categoryFilter, setCategoryFilter] = useState<string>('')
 
+    const [logged, setLogged] = useState<boolean>(false)
+
     useEffect(() => {
         fetch('http://localhost:1337/api/products/?populate=*')
         .then(res => res.json())
@@ -169,7 +171,7 @@ function App() {
         <Router>
             {(repository && cart) && 
             <main className="App">
-                <Navbar cart={cart}/>
+                <Navbar cart={cart} logged={logged} setLogged={setLogged}/>
                 <section className="App__background_banner">
                 </section>
                 <section className="App__body">
@@ -186,85 +188,5 @@ function App() {
         </Router>
     );
 }
-
-// const handleRemove = (id:string) => {
-//     let eraseProduct:objAmount;
-
-//     cart.forEach( el => {
-//         if(el.id === id){
-//             eraseProduct = el
-//         }
-//     })
-
-//     setCart((prevState: objAmount[]) => {
-//         console.log(prevState)
-//         let newState = [...prevState]
-//         newState.splice(cart.indexOf(eraseProduct)+1,1)
-//         console.log(newState)
-//         return newState
-//     })
-// }
-
-// length={0} toString={undefined} toLocaleString={undefined} pop={function (): ProductProps | undefined {
-//   throw new Error('Function not implemented.');
-// } } push={function (...items: ProductProps[]): number {
-//   throw new Error('Function not implemented.');
-// } } concat={function (...items: ConcatArray<ProductProps>[]): ProductProps[] {
-//   throw new Error('Function not implemented.');
-// } } join={function (separator?: string): string {
-//   throw new Error('Function not implemented.');
-// } } reverse={function (): ProductProps[] {
-//   throw new Error('Function not implemented.');
-// } } shift={function (): ProductProps | undefined {
-//   throw new Error('Function not implemented.');
-// } } slice={function (start?: number, end?: number): ProductProps[] {
-//   throw new Error('Function not implemented.');
-// } } sort={function (compareFn?: (a: ProductProps, b: ProductProps) => number): IntrinsicAttributes & ProductProps[] {
-//   throw new Error('Function not implemented.');
-// } } splice={function (start: number, deleteCount?: number): ProductProps[] {
-//   throw new Error('Function not implemented.');
-// } } unshift={function (...items: ProductProps[]): number {
-//   throw new Error('Function not implemented.');
-// } } indexOf={function (searchElement: ProductProps, fromIndex?: number): number {
-//   throw new Error('Function not implemented.');
-// } } lastIndexOf={function (searchElement: ProductProps, fromIndex?: number): number {
-//   throw new Error('Function not implemented.');
-// } } every={function <S extends ProductProps>(predicate: (value: ProductProps, index: number, array: ProductProps[]) => value is S, thisArg?: any): this is S[] {
-//   throw new Error('Function not implemented.');
-// } } some={function (predicate: (value: ProductProps, index: number, array: ProductProps[]) => unknown, thisArg?: any): boolean {
-//   throw new Error('Function not implemented.');
-// } } forEach={function (callbackfn: (value: ProductProps, index: number, array: ProductProps[]) => void, thisArg?: any): void {
-//   throw new Error('Function not implemented.');
-// } } map={function <U>(callbackfn: (value: ProductProps, index: number, array: ProductProps[]) => U, thisArg?: any): U[] {
-//   throw new Error('Function not implemented.');
-// } } filter={function <S extends ProductProps>(predicate: (value: ProductProps, index: number, array: ProductProps[]) => value is S, thisArg?: any): S[] {
-//   throw new Error('Function not implemented.');
-// } } reduce={function (callbackfn: (previousValue: ProductProps, currentValue: ProductProps, currentIndex: number, array: ProductProps[]) => ProductProps): ProductProps {
-//   throw new Error('Function not implemented.');
-// } } reduceRight={function (callbackfn: (previousValue: ProductProps, currentValue: ProductProps, currentIndex: number, array: ProductProps[]) => ProductProps): ProductProps {
-//   throw new Error('Function not implemented.');
-// } } find={function <S extends ProductProps>(predicate: (this: void, value: ProductProps, index: number, obj: ProductProps[]) => value is S, thisArg?: any): S | undefined {
-//   throw new Error('Function not implemented.');
-// } } findIndex={function (predicate: (value: ProductProps, index: number, obj: ProductProps[]) => unknown, thisArg?: any): number {
-//   throw new Error('Function not implemented.');
-// } } fill={function (value: ProductProps, start?: number, end?: number): IntrinsicAttributes & ProductProps[] {
-//   throw new Error('Function not implemented.');
-// } } copyWithin={function (target: number, start: number, end?: number): IntrinsicAttributes & ProductProps[] {
-//   throw new Error('Function not implemented.');
-// } } entries={function (): IterableIterator<[number, ProductProps]> {
-//   throw new Error('Function not implemented.');
-// } } keys={function (): IterableIterator<number> {
-//   throw new Error('Function not implemented.');
-// } } values={function (): IterableIterator<ProductProps> {
-//   throw new Error('Function not implemented.');
-// } } includes={function (searchElement: ProductProps, fromIndex?: number): boolean {
-//   throw new Error('Function not implemented.');
-// } } flatMap={function <U, This = undefined>(callback: (this: This, value: ProductProps, index: number, array: ProductProps[]) => U | readonly U[], thisArg?: This): U[] {
-//   throw new Error('Function not implemented.');
-// } } flat={function <A, D extends number = 1>(this: A, depth?: D): FlatArray<A, D>[] {
-//   throw new Error('Function not implemented.');
-// } } at={function (index: number): ProductProps | undefined {
-//   throw new Error('Function not implemented.');
-// } } 
 
 export default App;

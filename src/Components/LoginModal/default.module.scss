@@ -1,8 +1,12 @@
 @import '../../app/Global/colors.css';
 
 .Container{
+    position: absolute;
     margin: 0;
     padding: 0;
+    top: -25%;
+    left: -25%;
+    z-index: 100;
     
     &__overlay{
         display: flex;
@@ -11,20 +15,15 @@
         margin: 0;
         padding: 0;
         position: absolute;
-        top: -25%;
-        left: -25%;
         height: 150vh;
         width: 150vw;
-        z-index: 100;
         background-color: #00000050;
 
         &__body{
-            position: absolute;
             padding: 3%;
             height: 20%;
             width: 35%;
             background-color: var(--cream);
-            z-index: 101;
             border-radius: 15px;
     
             &__titleContainer{

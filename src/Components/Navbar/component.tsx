@@ -5,7 +5,9 @@ import LoginModal from "../LoginModal/component";
 import classes from "./default.module.scss";
 
 interface NavbarProps{
-    cart:objAmount[]
+    cart:objAmount[];
+    logged:boolean;
+    setLogged:Function
 }
 
 export default function Navbar(props:NavbarProps) {
@@ -30,7 +32,9 @@ export default function Navbar(props:NavbarProps) {
         </section>
         <section className={classes.Navbar__tab}>
             <div className={classes.Navbar__tab__userTab}>
-                <button className={classes.Navbar__tab__userTab__loginButton} onClick={() => {setloginModal(true)}}>Login</button>
+            { props.logged
+                ? <button className={classes.Navbar__tab__userTab__loginButton}>{username}</button>
+                : <button className={classes.Navbar__tab__userTab__loginButton} onClick={() => {setloginModal(true)}}>Login</button> }
             </div>
             <Link className={classes.Navbar__tab__cart} to={'/cart'}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -42,6 +46,6 @@ export default function Navbar(props:NavbarProps) {
             </Link>
         </section>
 
-        { loginModal && <LoginModal setLoginModal={setloginModal}/>}
+        { loginModal && <LoginModal setLoginModal={setloginModal} username={username} setUsername={setUsername} password={password} setPassword={setPassword} setLogged={props.setLogged}/>}
     </nav>
 }

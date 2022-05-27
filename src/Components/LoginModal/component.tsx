@@ -4,6 +4,11 @@ import classes from './default.module.scss';
 
 interface LoginModalProps{
     setLoginModal:Function;
+    username:string;
+    setUsername:Function;
+    password:string;
+    setPassword:Function;
+    setLogged:Function;
 }
 
 export default function LoginModal(props:LoginModalProps){
@@ -12,6 +17,12 @@ export default function LoginModal(props:LoginModalProps){
 
     const changePasswordVisibility = () => {
         setPasswordVisibile(!passwordVisibile)
+    }
+
+    const handleLogin = () => {
+        // TODO: handle findId
+        (props.username && props.password) && props.setLogged(true)
+        props.setLoginModal(false)
     }
 
     return <section className={classes.Container}>
@@ -25,13 +36,13 @@ export default function LoginModal(props:LoginModalProps){
                 <section className={classes.Container__overlay__body__bodyContainer}>
                     <div className={classes.Container__overlay__body__bodyContainer__usernameContainer}>
                         <label htmlFor="inputUsername">Username</label>
-                        <input type="text" placeholder='Inserire nome utente' id='inputUsername'/>
+                        <input type="text" placeholder='Inserire nome utente' id='inputUsername' onChange={(e) => props.setUsername(e.target.value)}/>
                         
                     </div>
                     <div className={classes.Container__overlay__body__bodyContainer__passwordContainer}>
                         <label htmlFor="inputPassword">Password</label>
                         <div className={classes.Container__overlay__body__bodyContainer__passwordContainer__inputContainer}>
-                            <input type={passwordVisibile ? 'text' : 'password'} placeholder='Inserire password' id='inputPassword'/>
+                            <input type={passwordVisibile ? 'text' : 'password'} placeholder='Inserire password' id='inputPassword' onChange={(e) => props.setPassword(e.target.value)}/>
                             { passwordVisibile
                                 ? <button className={classes.Container__overlay__body__bodyContainer__passwordContainer__inputContainer__visibilityButton} onClick={changePasswordVisibility}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
@@ -56,7 +67,7 @@ export default function LoginModal(props:LoginModalProps){
                         <button className={classes.Container__overlay__body__buttonsContainer__backButtonContainer__backButton} onClick={() => {props.setLoginModal(false)}}>Indietro</button>
                     </a>
                     <a className={classes.Container__overlay__body__buttonsContainer__proceedButtonContainer}>
-                        <button className={classes.Container__overlay__body__buttonsContainer__proceedButtonContainer__proceedButton}>Accedi</button>
+                        <button className={classes.Container__overlay__body__buttonsContainer__proceedButtonContainer__proceedButton} onClick={handleLogin}>Accedi</button>
                     </a>
                 </section>
             </main>

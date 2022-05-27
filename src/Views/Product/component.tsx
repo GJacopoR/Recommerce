@@ -43,7 +43,7 @@ export default function Product(props:ProductProps){
                     </div>
                     : <h3 className={classes.Product__priceContainer__fullPrice}>{product.pricing.price}</h3>
                 }
-                <button className={classes.Product__priceContainer__button}>Add to Cart!</button>
+                <button className={classes.Product__priceContainer__button} onClick={() => props.handleAddToChart(product)}>Add to Cart!</button>
             </div> 
 
         </section>

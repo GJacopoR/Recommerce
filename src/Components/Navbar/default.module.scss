@@ -13,8 +13,6 @@
     background-color: var(--cream);
     z-index: 10;
     flex-wrap: wrap;
-    // -webkit-box-shadow: 0px 3px 20px 1px rgba(0,0,0,0.5); 
-    // box-shadow: 0px 3px 20px 1px rgba(0,0,0,0.5);
 
     &__logo{
         font-size: 1.1em;
@@ -36,6 +34,7 @@
         width: 15%;
 
         &__userTab{
+
             &__loginButton{
                 background-color: var(--cream);
                 padding: 5px 30px;
@@ -44,12 +43,44 @@
                 color: var(--main-bg);
                 font-size: large;
                 font-weight: bold;
+                cursor: pointer;
+                transition: .3s;
+            }
+
+            &__loginButton:hover{
+                filter: saturate(150%);
+            }
+
+            &__logoutContainer{
+                position: absolute;
+                z-index: 20;
+                margin-top: 10px;
+                padding: 5px 30px;
+                background-color: var(--cream);
+                padding: 5px 30px;
+                border: 3px solid var(--white);
+                border-radius: 10px;
+                color: var(--main-bg);
+                font-size: large;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            &__logoutContainer::after{
+                position: absolute;
+                top: 0;
+                height: 5px;
+                width: 5px;
+                background-color: var(--cream);
+                border: 3px solid var(--white);
+                z-index: 21;
             }
         }
 
         &__cart {
             width: 30px;
             position: relative;
+            transition: .2s;
     
             & svg{
                 transform: rotateY(180deg);
@@ -74,7 +105,15 @@
                 }
             }
         }
+
+        &__cart:hover{
+            width: 32px;
+        }
     }
+}
+
+.dnone{
+    display: none;
 }
 
 @media screen and (max-width: 1200px) {

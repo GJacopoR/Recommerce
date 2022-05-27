@@ -12,8 +12,7 @@
     background: radial-gradient(circle, #ffc8a2 0%, #ffffff 100%);
     -webkit-box-shadow: inset 0px -5px 20px 0px #ff6a0040, 0px 5px 15px 5px #ff400040;
     box-shadow: inset 0px -5px 40px 0px #ff6a0020, 0px 5px 15px 5px #ff6a0040;
-    // -webkit-box-shadow: 0px 5px 15px 5px #0000004d; 
-    // box-shadow: 0px 5px 15px 5px #0000004d;
+    transition: .3s;
 
     .clickArea{
         text-decoration: none;
@@ -107,6 +106,10 @@
     }
 }
 
+.Card:hover{
+    height: 420px;
+    width: 315px;
+}
 
 @media screen and (max-width: 380px) {
     .Card {

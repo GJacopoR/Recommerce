@@ -18,7 +18,7 @@ export default function Navbar(props:NavbarProps) {
 
     const [password, setPassword] = useState<string>('')
 
-    // let cartItems:number = props.cart[0] ? (props.cart.map(el => el.amount).reduce((t, n) => t+n)) : 0
+    const [isOpen, setIsOpen] = useState<boolean>(false)
 
     let cartItems = props.cart.length
 
@@ -33,8 +33,9 @@ export default function Navbar(props:NavbarProps) {
         <section className={classes.Navbar__tab}>
             <div className={classes.Navbar__tab__userTab}>
             { props.logged
-                ? <button className={classes.Navbar__tab__userTab__loginButton}>{username}</button>
+                ? <button className={classes.Navbar__tab__userTab__loginButton} onClick={() => {setIsOpen(!isOpen)}}>{username}</button>
                 : <button className={classes.Navbar__tab__userTab__loginButton} onClick={() => {setloginModal(true)}}>Login</button> }
+                <div className={isOpen ? classes.Navbar__tab__userTab__logoutContainer : classes.dnone}>Logout</div>
             </div>
             <Link className={classes.Navbar__tab__cart} to={'/cart'}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">

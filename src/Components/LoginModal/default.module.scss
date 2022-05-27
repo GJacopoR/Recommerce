@@ -21,9 +21,9 @@
         &__body{
             position: absolute;
             padding: 3%;
-            height: 15%;
-            width: 20%;
-            background-color: var(--light-gray);
+            height: 20%;
+            width: 35%;
+            background-color: var(--cream);
             z-index: 101;
             border-radius: 15px;
     
@@ -31,22 +31,174 @@
                 display: flex;
                 justify-content: center;
                 text-align: center;
-                height: 30%;
+                align-items: center;
+                height: 20%;
+
+                &__text{
+                    font-size: 2em;
+                    margin: 0;
+                }
             }
     
             &__bodyContainer{
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
                 height: 45%;
+
+                &__usernameContainer{
+                    position: relative;
+                    width: 45%;
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+
+                    & label{
+                        position: absolute;
+                        top: -11px;
+                        left: 10px;
+                        font-weight: 700;
+                        background-color: transparent;
+                        padding: 0;
+                    }
+
+                    & input{
+                        width: 100%;
+                        height: 20px;
+                        background-color: var(--white);
+                        border: 3px solid var(--white);
+                        border-radius: 10px;
+                    }
+                    // & label {
+                    //     width: 50%;
+                    // }
+                }
+
+                &__passwordContainer{
+                    position: relative;
+                    width: 45%;
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+
+                    & label{
+                        position: absolute;
+                        top: -11px;
+                        left: 10px;
+                        font-weight: 700;
+                        background-color: transparent;
+                        padding: 0;
+                    }
+
+                    &__inputContainer{
+                        width: 100%;
+                        display: flex;
+
+                        & input {
+                            width: 100%;
+                            height: 20px;
+                            background-color: var(--white);
+                            border: 3px solid var(--white);
+                            border-radius: 10px;
+                        }
+                        
+                        &__visibilityButton{
+                            width:fit-content;
+                            background-color: var(--cream);
+                            border: 0;
+                            border-radius: 5px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            & svg {
+                                height: 20px;
+                            }
+                        }
+                    }
+                    // & label {
+                    //     width: 50%;
+                    // }
+                }
+            }
+
+            &__redirectContainer{
+                height: 10%;
+                display: flex;
+                justify-content: center;
+
+                &__message{
+                    margin:0;
+                    text-align: center;
+                }
+            }
+
+            &__buttonsContainer{
+                height: 20%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-wrap: wrap;
+
+                &__backButtonContainer{
+                    &__backButton{
+                        width: 130px;
+                        background-color: var(--red);
+                        border-radius: 5px;
+                        border: 0px;
+                        padding: 10px 30px;
+                        color: var(--white);
+                        font-weight: bold;
+                        transition: .3s;
+                        cursor: pointer;
+                    }
+
+                    &__backButton:hover{
+                        background-color: var(--hover-red);
+                    }
+                }
+
+                &__proceedButtonContainer{
+                    &__proceedButton{
+                        width: 130px;
+                        background-color: var(--green);
+                        border-radius: 5px;
+                        border: 0px;
+                        padding: 10px 30px;
+                        color: var(--white);
+                        font-weight: bold;
+                        transition: .3s;
+                        cursor: pointer;
+                    }
+
+                    &__proceedButton:hover{
+                        background-color: var(--hover-green);
+                    }
+                }
             }
         }
 
-        @media screen and (max-width:680px) {
+        @media screen and (max-width:780px) {
             &__body{
                 width: 50%;
                 height: 30%;
+
+                &__bodyContainer{
+                       
+                    &__usernameContainer{
+                       width: 100%;
+                    }
+    
+                    &__passwordContainer{
+                        width: 100%;
+                    }
+                }
             }
         }
     }
+}
 
+input:active, input:focus {
+    outline: none;
 }

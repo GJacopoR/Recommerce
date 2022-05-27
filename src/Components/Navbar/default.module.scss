@@ -32,7 +32,7 @@
     &__tab{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         width: 15%;
 
         &__userTab{
@@ -77,6 +77,12 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+    .Navbar__tab{
+        width: 20%;
+    }
+}
+
 @media screen and (max-width: 680px){
     .Navbar{
         justify-content: center;
@@ -88,6 +94,7 @@
         &__tab{
             width: 100%;
             justify-content: space-evenly;
+            align-items: flex-end;
         }
     }
 }

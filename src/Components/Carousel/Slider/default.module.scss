@@ -1,0 +1,22 @@
+.Container{
+    max-height: 40vh;
+    min-width: 15%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+    transition: .3s;
+    
+    &__img{
+        max-height: fit-content;
+        max-width: 100%;
+        -webkit-box-shadow: 0px 5px 15px 5px #ff934680; 
+        box-shadow: 0px 5px 15px 5px #ff934680;
+        transition: .5s;
+    }
+}
+
+.Container:hover{
+    transform: scale(1.1);
+}

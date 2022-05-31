@@ -1,6 +1,7 @@
 import classes from "./default.module.scss";
 import { useParams } from "react-router-dom";
 import { objAmount } from "../../app/Global/model";
+import Carousel from "../../Components/Carousel/component";
 
 interface ProductProps{
     repository:objAmount[];
@@ -28,9 +29,11 @@ export default function Product(props:ProductProps){
                     <h4 className={classes.Product__toolbar__brandContainer__brand}>{product.brand}</h4>
                 </span>
             </div>
-            <picture className={classes.Product__imgContainer}>
+            { product.product_carousel
+                ? <Carousel images={product.product_carousel} name={product.title}/>
+                : <picture className={classes.Product__imgContainer}>
                 <img src={product.imageURL} alt={product.title + "_picture"} className={classes.Product__imgContainer__img}/>
-            </picture>
+            </picture> }
             <div className={classes.Product__descriptionContainer}>
                 <p className={classes.Product__descriptionContainer__description}>{product.description}</p>
             </div>

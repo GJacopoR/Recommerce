@@ -2,6 +2,7 @@ export interface objAmount{
     title: string;
     categories: string[]; 
     imageURL: string;
+    product_carousel:string[];
     popularity: number;
     description: string;
     slugid: string;

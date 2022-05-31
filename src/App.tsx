@@ -122,7 +122,7 @@ function App() {
             API.map((el:any) => (el.brand.data) ? el.brand = el.brand.data.attributes.name : el.brand = '')
             API.map((el:any) => (el.rating) ? el.rating = el.rating.rating : el.rating = [])
             API.map((el:any) => el.categories = el.categories.data.map((el:any) => el.attributes.category))
-            API.map((el:any) => (el.product_carousel.data) ? el.product_carousel = el.product_carousel.data.attributes.images.images : el.product_carousel = el.imageURL)
+            API.map((el:any) => (el.product_carousel.data) ? el.product_carousel = el.product_carousel.data.attributes.images.images : el.product_carousel = null) // el.imageURL)
             setRepository(API)
             setAPI(API)
         })

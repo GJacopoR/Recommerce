@@ -1,3 +1,4 @@
+import classes from './default.module.scss';
 
 const slide = [
     {
@@ -271,10 +272,17 @@ const slide = [
     }
 ]
 
-export default function Slider(){
-    return <section>
-        {slide.map((el, i) => { return <picture key={i}>
-            <img src={el.download_url} alt={el.download_url + '_picture'} />
-        </picture>})}
-    </section>
+interface SliderProps{
+    imageURL:string;
+    imageName:string;
+    show:boolean;
+}
+
+export default function Slider(props:SliderProps){
+    if(props.show){
+        return <picture className={classes.Container}>
+            <img src={props.imageURL} className={classes.Container} alt={props.imageName + " picture"} />
+        </picture>
+    }
+    return null
 }

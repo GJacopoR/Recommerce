@@ -2,17 +2,17 @@ import { useState } from 'react';
 import PaymentModal from '../../Components/PaymentModal/component';
 import classes from './default.module.scss';
 
-class Customer{
-    name!:string;
-    surname!:string;
-    email!:string;
-    birthdate!:Date;
-    birtplace!:string;
-    city!:string;
-    country!:string;
-    address!:string;
-    cap!:string;
-    telephone!:string;
+interface Customer{
+    name:string;
+    surname:string;
+    email:string;
+    birthdate:Date;
+    birtplace:string;
+    city:string;
+    country:string;
+    address:string;
+    cap:string;
+    telephone:string;
 }
 
 export default function Form() {
@@ -33,7 +33,7 @@ export default function Form() {
     
     const handleSubmit = () => {
         setPayment(true)
-        // alert("L'ordine sarà inviato a " + name + ' ' + surname)
+        let customer:Customer = {name:name, surname:surname, email:email, birthdate:birthdate, birtplace:birthplace, city:city, country:country, address:address, cap:cap, telephone:telephone}
     }
 
     return <section className={classes.formContainer}>

@@ -20,6 +20,11 @@ export default function Navbar(props:NavbarProps) {
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
+    const handleLogOut = () => {
+        props.setLogged(false)
+        setIsOpen(false)
+    }
+
     let cartItems = props.cart.length
 
     return <nav className={classes.Navbar}>
@@ -35,7 +40,7 @@ export default function Navbar(props:NavbarProps) {
             { props.logged
                 ? <button className={classes.Navbar__tab__userTab__loginButton} onClick={() => {setIsOpen(!isOpen)}}>{username}</button>
                 : <button className={classes.Navbar__tab__userTab__loginButton} onClick={() => {setloginModal(true)}}>Login</button> }
-                <div className={isOpen ? classes.Navbar__tab__userTab__logoutContainer : classes.dnone}>Logout</div>
+                <div className={isOpen ? classes.Navbar__tab__userTab__logoutContainer : classes.dnone} onClick={handleLogOut}>Logout</div>
             </div>
             <Link className={classes.Navbar__tab__cart} to={'/cart'}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">

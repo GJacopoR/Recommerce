@@ -13,7 +13,7 @@
         &__prevButton{
             position: absolute;
             top: 50%;
-            left: 20%;
+            left: 5%;
             z-index: 10;
             border: 0;
             border-radius: 10px;
@@ -32,7 +32,7 @@
         &__nextButton{
             position: absolute;
             top: 50%;
-            right: 20%;
+            right: 5%;
             z-index: 10;
             border: 0;
             border-radius: 10px;
@@ -58,15 +58,17 @@
 
 @media screen and (max-width:680px) {
     .Container{
-        margin: 7.5% 0;
+        margin: 0 0 7.5% 0;
         width: 80vw;
 
         &__buttonsContainer{
             &__prevButton{
                 top: 92.5%;
+                left: 25%;
             }
             &__nextButton{
                 top: 92.5%;
+                right: 25%;
             }
         }
     }

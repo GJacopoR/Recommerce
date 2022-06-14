@@ -30,7 +30,7 @@
 
     &__dotsContainer{
         position: absolute;
-        bottom: 10px;
+        bottom: 5px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -40,7 +40,7 @@
             height: 20px;
             border-radius: 50%;
             border: 0;
-            margin: 5px;
+            margin: 0 5px;
             background-color: var(--white);
         }
 

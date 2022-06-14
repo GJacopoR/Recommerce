@@ -13,7 +13,9 @@ export default function BetterCarousel(props:BetterCarouselProps){
 
     const nextSlide = () => {
         if (slideIndex !== props.images.length){
-            setSlideIndex(slideIndex + 1)
+            setSlideIndex(prevState => {
+                return prevState + 1
+            })
         } else {
             setSlideIndex(1)
         }
@@ -21,7 +23,9 @@ export default function BetterCarousel(props:BetterCarouselProps){
 
     const prevSlide = () => {
         if( slideIndex !== 1){
-            setSlideIndex(slideIndex - 1)
+            setSlideIndex(prevState => {
+                return prevState - 1
+            })
         } else {
             setSlideIndex(props.images.length)
         }

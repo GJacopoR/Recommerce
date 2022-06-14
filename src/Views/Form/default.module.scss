@@ -31,9 +31,50 @@
             box-sizing:content-box;
         }
 
+        & hr{
+            width: 75vw;
+            border: 1px solid var(--white);
+        }
+
+        &__passwordContainer{
+            width: 42.5%;
+            display: flex;
+
+            &__module{
+                width: 100%;
+                background-color: var(--cream);
+                border: 3px solid var(--white);
+                border-radius: 10px;
+                padding: 5px 10px;
+                margin: 5px 0;
+                -ms-box-sizing:content-box;
+                -moz-box-sizing:content-box;
+                -webkit-box-sizing:content-box; 
+                box-sizing:content-box;
+            }
+            
+            &__visibilityButton{
+                width:fit-content;
+                background-color: transparent;
+                border: 0;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                & svg {
+                    height: 20px;
+                }
+            }
+        }
+
         @media screen and (max-width: 680px){
             &__module{
                 width: 85%;
+            }
+
+            &__passwordContainer{
+                width: 92.5%;
             }
         }
     

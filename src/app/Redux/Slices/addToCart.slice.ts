@@ -3,16 +3,16 @@ import { objAmount } from '../../Global/model';
 
 const initialState:objAmount[] = []
 
-const addToChartSlice = createSlice({
+const addToCartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        save:(state:objAmount[],action:PayloadAction<objAmount>)=>{
+        addToCart:(state:objAmount[],action:PayloadAction<objAmount>)=>{
             state.push(action.payload)
         }
     },
 })
 
 export const cart = initialState
-export const { save } = addToChartSlice.actions
-export default addToChartSlice.reducer
+export const { addToCart } = addToCartSlice.actions
+export default addToCartSlice.reducer
